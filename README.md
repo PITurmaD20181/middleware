@@ -1,6 +1,6 @@
 # middleware
 
-# Popular
+## Popular
 
 1 - Professor `teachers/`
 
@@ -11,6 +11,10 @@
 4- Criar Estudantes `students/`
 
 5 - Adicionar estudantes numa turma `classes/1/add_student/`
+
+6 - Visualizar estudantes numa turma `classes/1/students/`
+
+## Registrar
 
 1 - `frequency_lists/inicialize_presences_list/`
 
