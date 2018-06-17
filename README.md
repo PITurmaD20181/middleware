@@ -21,3 +21,7 @@
 2 - Pra cada matricula, fazer a requisição POST para:
 
 `frequency_lists/add_presence/`
+
+3 - Vizualise a presença calculada:
+
+`students/1/frequency_lists/`
