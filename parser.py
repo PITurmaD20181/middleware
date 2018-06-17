@@ -21,7 +21,7 @@ class Parser:
 
         for line in lines:
             if line == '\n':
-                print('Skipping blank line')
+                pass
             else:
                 self._process_line(line)
 
