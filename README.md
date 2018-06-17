@@ -1,27 +1,33 @@
 # middleware
 
-## Popular
+# Instalando as dependências
 
-1 - Professor `teachers/`
+Este projeto utiliza o `Python3`. Recomendamos o Python na versão `3.6.4`. As dependências do python estão descritas no arquivo `requirements.txt`
 
-2 - Disciplina `disciplines/` (cadastrar PI `constants.py`)
+1 - Clone o projeto
+```shell
+git clone https://github.com/PITurmaD20181/middleware.git
+```
 
-3 - Adicionar uma turma `disciplines/1/classes`
+2 - Entre na pasta do projeto
+```shell
+cd middleware/
+```
 
-4- Criar Estudantes `students/`
+3 - Instale as dependências do python, utilizando  o `pip3`:
 
-5 - Adicionar estudantes numa turma `classes/1/add_student/`
+```shell
+pip3 install -r requirements.txt
+```
 
-6 - Visualizar estudantes numa turma `classes/1/students/`
+# Executando a aplicação
 
-## Registrar
+1 - Tenha a API sendo servida no endereço `0.0.0.0:8000`, com o banco de dados já populado.
 
-1 - `frequency_lists/inicialize_presences_list/`
+2 - A aplicação espera que o arquivo de matriculas esteja com o nome `Chamada.txt`. Caso queira utilizar um arquivo diferente, modifique o código `main.py` ou renomeie o arquivo desejado para `Chamada.txt`. Este arquivo já se encontra no projeto com alguns exemplos.
 
-2 - Pra cada matricula, fazer a requisição POST para:
+3 - Execute o script `main.py`:
 
-`frequency_lists/add_presence/`
-
-3 - Vizualise a presença calculada:
-
-`students/1/frequency_lists/`
+```shell
+python3 main.py
+```
