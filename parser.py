@@ -1,25 +1,9 @@
-chamada_file_name = 'Chamada.txt'
-
 from datetime import datetime
-
-class Present:
-    MATRICULA_SIZE = 9
-    DATE_FORMAT = '%a %b %d %H:%M:%S %Y'
-
-    def __init__(self, matricula, date):
-        assert(len(matricula) == Present.MATRICULA_SIZE)
-        assert(isinstance(date, datetime))
-
-        self.matricula = matricula
-        self.date = date
-
-    def __str__(self):
-        return 'Matricula: ({}), Data: ({})'.format(self.matricula, self.date)
+from present import Present
 
 class Parser:
 
     def __init__(self, lines):
-
         self._process_lines(lines)
 
     def create_tuple(self, matricula, date):
@@ -51,19 +35,3 @@ class Parser:
         matricula = line[:Present.MATRICULA_SIZE].strip()
         date = line[Present.MATRICULA_SIZE:].strip()
         self.create_tuple(matricula, date)
-
-
-if __name__ == '__main__':
-    try:
-        with open(chamada_file_name, 'r') as chamada_file:
-            print('File \'{}\' opened successfully.'.format(chamada_file_name))
-            data = chamada_file.readlines()
-
-            p = Parser(data)
-            tuples = p.get_tuples()
-            for t in tuples:
-                present = Present(*t)
-                print(present)
-
-    except FileNotFoundError:
-            print('Can\'t open file \'{}\' in the current directory.'.format(chamada_file_name))
