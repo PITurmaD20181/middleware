@@ -12,4 +12,11 @@ class Present:
         self.date = date
 
     def __str__(self):
-        return 'Matricula: ({}), Data: ({})'.format(self.matricula, self.date)
+        return 'registration: {}, date_time: {}'.format(self.matricula, self.date)
+
+    def as_dict(self):
+        d = dict()
+        d['registration'] = str(self.matricula)
+        d['date_time'] = str(self.date)
+        return d
+
