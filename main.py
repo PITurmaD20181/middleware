@@ -1,7 +1,16 @@
 from parser import Parser
 from present import Present
-from sender import Request
+from sender import Request, Initial
 
+
+def initialize_list():
+    request = Initial()
+    response = request.initialize_presences_list()
+
+    if response.status_code == 200:
+        print('Lista de frequência inicializada com sucesso.')
+    elif response.status_code == 500:
+        print('Erro ao iniciar lista de frequência.')
 
 def try_post_presence(present):
     request = Request()
@@ -17,6 +26,9 @@ if __name__ == '__main__':
     chamada_file_name = 'Chamada.txt'
     try:
         with open(chamada_file_name, 'r') as chamada_file:
+            
+            initialize_list()
+
             data = chamada_file.readlines()
 
             p = Parser(data)
